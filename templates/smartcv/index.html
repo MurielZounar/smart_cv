@@ -1,0 +1,67 @@
+{% extends 'smartcv\base.html' %}
+{% load static %}
+{% block content %}
+    <main>
+        <h1>Gerador automático de Currículo e Carta de Apresentação.</h1>
+        <form class="form-cv" action="submit" method="get" name="form-cv">
+            <div class="block">
+                <!-- Dados pessoais -->
+                <div class="section personal name">
+                    <label for="name"><img class="icon" src="{% static 'assets/user.png' %}" alt="user image">Nome</label>
+                    <input type="text" name="name" autocomplete="name" required>
+                </div>
+                <div class="section personal contact">
+                    <label for="contact"><img class="icon" src="{% static 'assets/phone-call.png' %}" alt="user image">Contato</label>
+                    <input type="text" name="contact" required>
+                </div>
+                
+                <div class="section social linkedin">
+                    <label for="linkedin-link"><img class="icon" src="{% static 'assets/social-linkedin.png' %}" alt="user image">LinkedIn</label>
+                    <input type="text" name="linkedin-link">
+                </div>
+                <div class="section social github">
+                    <label for="github-link"><img class="icon" src="{% static 'assets/social-github.png' %}" alt="user image">GitHub</label>
+                    <input type="text" name="github-link">
+                </div>
+            </div>
+        
+            <!-- Professional Experiences -->
+             <div class="section experiences">
+                <label for="professional-experiences"><img class="icon" src="{% static 'assets/experience.png' %}" alt="user image">Experiências Profissionais</label>
+                <textarea name="professional-experiences" id="professional-experiences" rows="3"></textarea>
+            </div>
+        
+            <!-- Academic background -->
+             <div class="section academic">
+                <label for="academic-background"><img class="icon" src="{% static 'assets/academic.png' %}" alt="user image">Formação Acadêmica</label>
+                <textarea name="academic-background" id="academic-background" rows="3"></textarea>
+            </div>
+        
+            <!-- Tecnical and Interpersonal Skills -->
+             <div class="section skills">
+                <label for="skills-description"><img class="icon" src="{% static 'assets/skills.png' %}" alt="user image">Habilidades Técnicas e Interpessoais</label>
+                <textarea name="skills-description" id="skills-description" rows="3"></textarea>
+            </div>
+        
+            <!-- Professional Objectives-->
+             <div class="section objectives">
+                <label for="professional-objectives"><img class="icon" src="{% static 'assets/target.png' %}" alt="user image">Objetivo Profissional</label>
+                <textarea name="professional-objectives" id="professional-objectives" rows="3"></textarea>
+            </div>
+        
+            <div class="block">
+            <!-- Vacancy Data -->
+                <div class="section vacancy position">
+                    <label for="vacancy-data"><img class="icon" src="{% static 'assets/job-position.png' %}" alt="user image">Cargo</label>
+                    <input type="text" name="vacancy-data" required>
+                </div>
+                <div class="section vacancy description">
+                    <label for="vacancy-description"><img class="icon" src="{% static 'assets/job-description.png' %}" alt="user image">Descrição da vaga</label>
+                    <input type="text" name="vacancy-description" required>
+                </div>
+            </div>
+            
+            <a href="#" type="submit" class="submit-button"><img class="btn-logo" src="{% static 'assets/logo_smartcv.png' %}" alt="SmartCV logo">Gerar CV</a>
+        </form>
+    </main>
+{% endblock %}
